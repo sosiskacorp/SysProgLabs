@@ -1,0 +1,73 @@
+.header {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+}
+
+#taskInput {
+    flex-grow: 2;
+    border: none;
+}
+
+#addTaskButton {
+    background: grey;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.tasks-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    width: 50%;
+}
+
+#taskList li {
+    background-color: lightgrey;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+#taskList li::before {
+    content: '✔';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: black;
+    visibility: hidden;
+}
+
+#taskList li.completed {
+    background-color: darkgrey;
+    text-decoration: line-through;
+}
+
+#taskList li.completed::before {
+    visibility: visible;
+}
+
+#taskList li button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}

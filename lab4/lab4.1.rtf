@@ -1,0 +1,67 @@
+{\rtf1\ansi\ansicpg1251\cocoartf2757
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Task1.1\
+function maxDiff(arr) \{\
+    return Math.max(...arr) - Math.min(...arr);\
+\}\
+console.log(maxDiff([1, 10, 7, 15, 2, 7])); // 13\
+\
+Task1.2\
+function removeDuplicates(arr) \{\
+    return [...new Set(arr)];\
+\}\
+console.log(removeDuplicates([1, 2, 3, 2, 1, 4])); // [1, 2, 3, 4]\
+\
+Task1.3\
+function filterDoneTasks(tasks) \{\
+    return tasks.filter(task => task.isDone);\
+\}\
+console.log(filterDoneTasks([\
+    \{id: 1, isDone: true\}, \
+    \{id: 2, isDone: false\},\
+    \{id: 3, isDone: true\}\
+])); // [\{id: 1, isDone: true\}, \{id: 3, isDone: true\}]\
+\
+Task2.1\
+function greaterThan(arr, num) \{\
+    return arr.filter(element => element > num);\
+\}\
+console.log(greaterThan([1, 4, 6, 3, 2], 2)); // [4, 6, 3]\
+\
+Task2.2\
+function flattenArray(arr) \{\
+    return arr.flat(Infinity);\
+\}\
+console.log(flattenArray([1, 4, [34, 1, 20], [6, [6, 12, 8], 6]])); // [1, 4, 34, 1, 20, 6, 6, 12, 8, 6]\
+\
+Task3.1\
+function countZeroSumPairs(arr) \{\
+    let count = 0;\
+    for (let i = 0; i < arr.length; i++) \{\
+        for (let j = i + 1; j < arr.length; j++) \{\
+            if (arr[i] + arr[j] === 0) count++;\
+        \}\
+    \}\
+    return count;\
+\}\
+console.log(countZeroSumPairs([-7, 12, 4, 6, -4, -12, 0])); // 2\
+\
+Task3.2\
+function countTripletsWithZeroSum(arr) \{\
+    let count = 0;\
+    for (let i = 0; i < arr.length; i++) \{\
+        for (let j = i + 1; j < arr.length; j++) \{\
+            for (let k = j + 1; k < arr.length; k++) \{\
+                if (arr[i] + arr[j] + arr[k] === 0) count++;\
+            \}\
+        \}\
+    \}\
+    return count;\
+\}\
+console.log(countTripletsWithZeroSum([-1, 2, 4, 7, -4, 1, -2])); // 3\
+}
