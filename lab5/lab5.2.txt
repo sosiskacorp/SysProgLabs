@@ -1,0 +1,80 @@
+Task1
+const arr = [1,  6, -1,  22,  13];
+
+const max = Math.max(...arr);
+const min = Math.min(...arr);
+
+console.log(max); //  22
+console.log(min); // -1
+
+Task2
+const str = "!тевирП";
+
+const reversedStr = str.split('').reverse().join('');
+
+console.log(reversedStr); // "Привет!"
+
+Task2.1
+const userStr = prompt("Введите строку:");
+
+const reversedUserStr = userStr.split('').reverse().join('');
+
+console.log(reversedUserStr);
+
+Task3
+const arr = [3,  5,  8,  13,  21,  42];
+
+const sumOfSqrt = arr.filter(num => num %  2 ===  0).reduce((acc, num) => acc + Math.sqrt(num),  0);
+
+console.log(sumOfSqrt); // Сумма квадратных корней для всех чётных чисел в массиве
+
+Task4
+function anagram(str1, str2) {
+  const sortedStr1 = str1.split('').sort().join('');
+  const sortedStr2 = str2.split('').sort().join('');
+
+  return sortedStr1 === sortedStr2;
+}
+
+console.log(anagram("Лунь", "нуль")); // true
+console.log(anagram("Лунь", "ноль")); // false
+
+Task5
+function palindrome(str) {
+  const reversedStr = str.split('').reverse().join('');
+  return str === reversedStr;
+}
+
+console.log(palindrome("Не гни папин ген")); // true
+console.log(palindrome("123")); // false
+
+Task6
+let fibonacci = [0,  1];
+
+function printFibonacci() {
+  console.log(fibonacci[fibonacci.length -  1]);
+  if (fibonacci.length <  10) { // Для примера выводим первые  10 чисел
+    fibonacci.push(fibonacci[fibonacci.length -  1] + fibonacci[fibonacci.length -  2]);
+    setTimeout(printFibonacci,  1000);
+  }
+}
+
+printFibonacci();
+
+Task7
+function intersect(arrA, arrB) {
+  return arrA.filter(value => arrB.includes(value));
+}
+
+console.log(intersect([1,  2,  3,  4], [3,  4,  5,  6])); // [3,  4]
+
+Task9
+let i;
+for(i =  1; i <=  3; i++) {
+  setTimeout(() => console.log(i),  1000);
+}
+Этот код выведет 4 три раза, потому что переменная i будет увеличена до 4 до того, как setTimeout начнет выполняться. Чтобы выводить 1, 2, 3, нужно использовать замыкания или let в цикле:
+
+for(let i =  1; i <=  3; i++) {
+  setTimeout(() => console.log(i),  1000);
+}

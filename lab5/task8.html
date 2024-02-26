@@ -1,0 +1,17 @@
+<button id="increase">+</button>
+<button id="decrease">-</button>
+<div id="value">0</div>
+
+<script>
+  let value =  0;
+
+  document.getElementById('increase').addEventListener('click', () => {
+    value++;
+    document.getElementById('value').textContent = value;
+  });
+
+  document.getElementById('decrease').addEventListener('click', () => {
+    value--;
+    document.getElementById('value').textContent = value;
+  });
+</script>
