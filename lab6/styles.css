@@ -1,0 +1,120 @@
+/* Variables */
+:root {
+    --primary-color: red;
+    --button-color: grey;
+    --button-text-color: white;
+    --footer-text-color: #888;
+}
+
+/* General styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header styles */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.header__title {
+    margin: 0;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.input-group__input {
+    flex-grow: 2;
+    border: none;
+    margin-right: 10px;
+}
+
+.input-group__button {
+    background: var(--button-color);
+    border: none;
+    color: var(--button-text-color);
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* Tasks container styles */
+.tasks-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+.tasks-container__list {
+    list-style-type: none;
+    padding: 0;
+    width: 50%;
+}
+
+.tasks-container__list li {
+    background-color: lightgrey;
+    margin-bottom: 10px;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    transition: background-color 0.3s;
+}
+
+.tasks-container__list li:hover {
+    background-color: #ccc;
+}
+
+.tasks-container__list li.completed {
+    background-color: darkgrey;
+    text-decoration: line-through;
+}
+
+.tasks-container__list li button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* No tasks message styles */
+.no-tasks-message {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    color: var(--footer-text-color);
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer__line {
+    margin: 20px 0;
+}
+
+.footer__copyright {
+    color: var(--footer-text-color);
+    font-size: 12px;
+}

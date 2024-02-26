@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Список дел</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app" class="app">
+        <div class="header">
+            <h1 class="header__title">JS Список дел</h1>
+            <div class="input-group">
+                <input id="taskInput" type="text" placeholder="Новая задача" class="input-group__input">
+                <button id="addTaskButton" class="input-group__button">Добавить</button>
+                <button id="clearAllButton" class="input-group__button">Очистить всё</button>
+                <button id="sortByDateButton" class="input-group__button" onclick="sortByDate()">Сортировать по дате</button>
+                <button id="sortByTextButton" class="input-group__button" onclick="sortByText()">Сортировать по тексту</button>
+            </div>
+        </div>
+        <div class="tasks-summary">
+            <span>Выполнено: <span id="completedTasksCount">0</span></span>
+            <span>Осталось: <span id="remainingTasksCount">0</span></span>
+        </div>
+        <div class="tasks-container">
+            <ul id="taskList" class="tasks-container__list">
+            </ul>
+        </div>
+        <div class="no-tasks-message">Не найдено ни одного дела</div>
+        <footer class="footer">
+            <hr class="footer__line">
+            <p class="footer__copyright">Copyright ©</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
