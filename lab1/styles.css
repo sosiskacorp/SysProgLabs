@@ -1,87 +1,93 @@
-/* Variables */
+/* Обновленные переменные */
 :root {
-    --primary-color: red;
-    --button-color: grey;
+    --primary-color: #3498db;
+    --button-color: #2ecc71;
     --button-text-color: white;
     --footer-text-color: #888;
+    --hover-color: #2980b9;
+    --completed-color: #95a5a6;
+    --font-family: Arial, sans-serif;
+    --decorative-font-family: 'Pacifico', cursive;
 }
 
-/* General styles */
+/* Общие стили */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family);
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
 }
 
 .app {
-    min-height: 100vh;
+    width: 100%;
+    max-width: 600px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Header styles */
-.header {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
+/* Заголовок */
 .header__title {
-    margin: 0;
+    font-family: var(--decorative-font-family);
+    font-size: 2em;
+    margin-bottom: 20px;
 }
 
-.input-group {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-}
-
+/* Ввод задачи */
 .input-group__input {
-    flex-grow: 2;
-    border: none;
-    margin-right: 10px;
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .input-group__button {
     background: var(--button-color);
-    border: none;
     color: var(--button-text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    padding: 5px 10px;
-}
-
-/* Tasks container styles */
-.tasks-container {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-    flex-grow: 1;
-    overflow-y: auto;
-}
-
-.tasks-container__list {
-    list-style-type: none;
-    padding: 0;
-    width: 50%;
-}
-
-.tasks-container__list li {
-    background-color: lightgrey;
-    margin-bottom: 10px;
-    padding: 10px;
-    position: relative;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     transition: background-color 0.3s;
 }
 
+.input-group__button:hover {
+    background-color: var(--hover-color);
+}
+
+/* Список задач */
+.tasks-container__list {
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+    max-width: 500px;
+}
+
+.tasks-container__list li {
+    background-color: #f5f5f5;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .tasks-container__list li:hover {
-    background-color: #ccc;
+    background-color: #e0e0e0;
 }
 
 .tasks-container__list li.completed {
-    background-color: darkgrey;
+    background-color: var(--completed-color);
     text-decoration: line-through;
 }
 
@@ -92,11 +98,11 @@ body {
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: white;
+    color: #333;
     cursor: pointer;
 }
 
-/* No tasks message styles */
+/* Сообщение о отсутствии задач */
 .no-tasks-message {
     display: none;
     text-align: center;
@@ -104,17 +110,26 @@ body {
     color: var(--footer-text-color);
 }
 
-/* Footer styles */
+/* Футер */
 .footer {
+    width: 100%;
     text-align: center;
     margin-top: auto;
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    color: var(--button-text-color);
+    position: fixed;
+    bottom: 0;
 }
 
-.footer__line {
-    margin: 20px 0;
-}
+/* Медийные запросы для адаптивности */
+@media (max-width: 600px) {
+    .app {
+        padding: 10px;
+    }
 
-.footer__copyright {
-    color: var(--footer-text-color);
-    font-size: 12px;
+    .input-group__input,
+    .input-group__button {
+        margin-bottom: 10px;
+    }
 }

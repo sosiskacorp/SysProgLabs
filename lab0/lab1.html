@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Список дел</title>
+    <!-- Включение JavaScript для динамического обновления года -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="page-title">Список дел</h1>
+    </header>
+    <main>
+        <input type="text" id="taskInput" class="task-input" placeholder="Новый элемент списка">
+        <button id="createButton" class="action-button">Создать</button>
+        <button id="clearAllButton" class="action-button">Очистить всё</button>
+        <ol id="taskList" class="task-list">
+            <li class="task-item">
+                <sup class="task-date">01.01.2024</sup>
+                <input type="checkbox" class="task-check"> Задача 1
+                <button class="task-delete">Удалить</button>
+            </li>
+            <li class="task-item">
+                <sup class="task-date">02.01.2024</sup>
+                <input type="checkbox" class="task-check"> Задача 2
+                <button class="task-delete">Удалить</button>
+            </li>
+            <li class="task-item">
+                <sup class="task-date">03.01.2024</sup>
+                <input type="checkbox" class="task-check"> Задача 3
+                <button class="task-delete">Удалить</button>
+            </li>
+        </ol>
+    </main>
+    <footer>
+        <hr>
+        <p class="copyright">Copyright © <span id="currentYear"></span>. Все права защищены.</p>
+    </footer>
+    <script>
+        // Обновление года в футере каждый год
+        $(document).ready(function() {
+            var currentYear = new Date().getFullYear();
+            $('#currentYear').html(currentYear);
+        });
+    </script>
+</body>
+</html>
