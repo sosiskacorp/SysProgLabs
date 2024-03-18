@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const filePath = 'text.txt'; // Укажите путь к вашему файлу
+const filePath = 'text.txt'; 
 
 fs.readFile(filePath, 'utf8', (err, data) => {
     if (err) {

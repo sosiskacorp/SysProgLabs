@@ -1,6 +1,7 @@
+import './styles.css';
 let tasks = [];
 let sortAscending = true;
-let filterMode = 'all'; // Добавляем переменную для фильтрации
+let filterMode = 'all'; 
 
 document.getElementById('addTaskButton').addEventListener('click', function() {
     var task = document.getElementById('taskInput').value.trim();
