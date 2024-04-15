@@ -1,23 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import CitySelector from './CitySelector';
+import Calculator from './Calculator';
+import NumberBaseConverter from './NumberBaseConverter';
+import AgeCounter from './AgeCounter';
+import NumberList from './NumberList';
+import RegistrationForm from './RegistrationForm';
+import ProfileEditForm from './ProfileEditForm';
+import FinalFormExample from './FinalFormExample';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>React: Forms and Validation</h1>
+
+      <h2>City Selector</h2>
+      <CitySelector />
+
+      <h2>Calculator</h2>
+      <Calculator />
+
+      <h2>Number Base Converter</h2>
+      <NumberBaseConverter />
+
+      <h2>Age Counter</h2>
+      <AgeCounter />
+
+      <h2>Number List with Filtering</h2>
+      <NumberList />
+
+      <h2>Registration Form</h2>
+      <RegistrationForm />
+
+      <h2>Profile Edit Form</h2>
+      <ProfileEditForm />
+
+      <h2>Final Form Example</h2>
+      <FinalFormExample />
     </div>
   );
 }
